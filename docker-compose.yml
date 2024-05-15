@@ -1,14 +1,17 @@
+# docker-compose.yml
 version: '3.8'
 
 services:
-  web:
+  app:
     build: .
     ports:
       - "8000:8000"
     depends_on:
       - db
+    environment:
+      - APP_MODE=api  # Cambia a 'etl' para ejecutar el proceso ETL
     env_file:
-      - .env  
+      - .env
 
   db:
     image: postgres:13
@@ -21,3 +24,4 @@ services:
 
 volumes:
   postgres_data:
+

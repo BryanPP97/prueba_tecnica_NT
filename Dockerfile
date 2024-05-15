@@ -1,19 +1,12 @@
-# Usar la imagen oficial de Python
+# Dockerfile
 FROM python:3.10
 
-# Establecer el directorio de trabajo
 WORKDIR /app
 
-# Copiar los archivos de requisitos y el archivo .env primero
-COPY requirements.txt .env ./
-
-# Instalar las dependencias
+COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copiar el resto de los archivos de la aplicación
-# Asegúrate de que los nombres de archivos son correctos
 COPY . .
 
-# Comando para ejecutar el script principal
-CMD ["python", "main.py"]
+CMD ["sh", "-c", "if [ \"$APP_MODE\" = 'api' ]; then uvicorn api.main:app --host 0.0.0.0 --port 8000; else python etl/data_etl.py; fi"]
 
