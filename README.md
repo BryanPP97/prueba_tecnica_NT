@@ -37,40 +37,41 @@ Para poner en marcha el proyecto, sigue estos pasos:
 
 1. Construir y Levantar los Servicios
 
-Desde la raíz del directorio del proyecto, ejecuta:
+    Desde la raíz del directorio del proyecto, ejecuta:
 
-    ```bash
-    docker-compose up --build
-    ```
+        ```bash
+        docker-compose up --build
+        ```
 2. Verificación
 
-Asegúrate de que todos los contenedores están corriendo correctamente:
+    Asegúrate de que todos los contenedores están corriendo correctamente:
 
-    ```bash
-    docker-compose ps
-    ```
+        ```bash
+        docker-compose ps
+
+        ```
 
 3. Acceso a la API
 
-La API estará disponible en http://localhost:8000. Puedes interactuar con ella usando herramientas como cURL, Postman o simplemente a través de tu navegador para acceder a la documentación automática generada por FastAPI.
+    La API estará disponible en http://localhost:8000. Puedes interactuar con ella usando herramientas como cURL, Postman o simplemente a través de tu navegador para acceder a la documentación automática generada por FastAPI.
 
 4.Ejecutar Comandos Adicionales
 
-Si necesitas ejecutar comandos adicionales en uno de tus contenedores, puedes hacerlo con:
+    Si necesitas ejecutar comandos adicionales en uno de tus contenedores, puedes hacerlo con:
 
-```bash
-docker-compose exec NOMBRE_DEL_SERVICIO COMANDO
-```
+    ```bash
+    docker-compose exec NOMBRE_DEL_SERVICIO COMANDO
+    ```
 
-Por ejemplo, para interactuar con la base de datos, puedes usar:
+    Por ejemplo, para interactuar con la base de datos, puedes usar:
 
-```bash
-docker compose exec db psql -U bryan -d mydatabase
-```
+    ```bash
+    docker compose exec db psql -U bryan -d mydatabase
+    ```
 
-Limpieza
-Para detener y remover todos los contenedores, redes y volúmenes creados por Docker Compose, ejecuta:
+## Limpieza
+    Para detener y remover todos los contenedores, redes y volúmenes creados por Docker Compose, ejecuta:
 
-```bash
-docker-compose down -v
-```
+    ```bash
+    docker-compose down -v
+    ```
