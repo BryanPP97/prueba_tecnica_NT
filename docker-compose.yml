@@ -9,7 +9,7 @@ services:
     depends_on:
       - db
     environment:
-      - APP_MODE=etl # Cambia a 'etl' para ejecutar el proceso ETL o api
+      - APP_MODE=api # Cambia a 'etl' para ejecutar el proceso ETL o api
     env_file:
       - .env
 
