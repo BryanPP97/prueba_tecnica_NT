@@ -55,7 +55,7 @@ Para poner en marcha el proyecto, sigue estos pasos:
 
     La API estará disponible en http://localhost:8000. Puedes interactuar con ella usando herramientas como cURL, Postman o simplemente a través de tu navegador para acceder a la documentación automática generada por FastAPI.
 
-4.Ejecutar Comandos Adicionales
+4. Ejecutar Comandos Adicionales
 
     Si necesitas ejecutar comandos adicionales en uno de tus contenedores, puedes hacerlo con:
 
