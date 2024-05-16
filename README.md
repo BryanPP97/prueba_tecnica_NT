@@ -150,3 +150,4 @@ pytest
 
 Con estos pasos, deberías poder ejecutar los tests y verificar las funciones del proyecto funcionan correctamente.
 
+## El diagrama de la base de datos se encuentra en formato pdf en la raíz de este repositorio
