@@ -18,7 +18,7 @@ def load_data(engine):
         logging.info("Leyendo el archivo CSV.")
         df = pd.read_csv('data_NT.csv')
         logging.info("Archivo CSV leído correctamente. Iniciando la carga a la base de datos.")
-        df.to_sql('data_NT', engine, if_exists='replace', index=False)
+        df.to_sql('data_nt', engine, if_exists='replace', index=False)
         logging.info("Datos cargados exitosamente en la base de datos.")
         return True
     except Exception as e:

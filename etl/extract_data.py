@@ -15,7 +15,7 @@ def extract_data(engine):
     """
     try:
         with engine.connect() as connection:
-            df = pd.read_sql('SELECT * FROM "data_NT"', connection)
+            df = pd.read_sql('SELECT * FROM "data_nt"', connection)
             if df.empty:
                 logging.warning("No se encontraron datos para extraer.")
                 return False, None

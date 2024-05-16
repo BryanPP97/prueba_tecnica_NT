@@ -32,6 +32,7 @@ def process_transformations(df):
     """Aplica transformaciones al DataFrame según el esquema propuesto."""
     df.rename(columns={'name': 'company_name', 'paid_at': 'updated_at'}, inplace=True)
     df['company_name'] = df['company_name'].astype(str).fillna('Unknown')  # Asumiendo que puede haber nulos
+    df['updated_at'] = pd.to_datetime(df['updated_at']).fillna(pd.Timestamp.now())   # Rellenar valores nulos en 'updated_at' y convertir a timestamp
     df = df.astype({
         'id': str,
         'company_id': str,

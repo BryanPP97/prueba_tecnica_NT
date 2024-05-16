@@ -22,6 +22,15 @@ class NumberSet:
 class ExtractRequest(BaseModel):
     number: conint(le=100, ge=1)  # Validación: el número debe estar entre 1 y 100
 
+@app.post("/extract/")
+def extract_number(request: ExtractRequest):
+    try:
+        number_set = NumberSet()
+        number_set.extract(request.number)
+        missing_number = number_set.find_missing_number()
+        return {"missing_number": missing_number}
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=str(e))
 
 
 if __name__ == "__main__":
