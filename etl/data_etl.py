@@ -1,10 +1,11 @@
 from sqlalchemy import create_engine
 import logging
 import os
-from etl.load_data import load_data
-from etl.extract_data import extract_data
-from etl.transform_data import transform_data, save_transformed_data
+from load_data import load_data
+from extract_data import extract_data
+from transform_data import transform_data, save_transformed_data
 from dotenv import load_dotenv
+from create_view import check_and_create_view , create_view
 
 # Configuración avanzada de logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', 
@@ -44,6 +45,15 @@ def main():
         logging.info("Iniciando la carga de datos transformados.")
         save_transformed_data(engine, companies_df, charges_df)
         logging.info("Datos transformados cargados exitosamente en la base de datos.")
+
+        # Paso 5: Crear la vista después de cargar los datos
+        logging.info("Iniciando la creación de la vista.")
+        create_view(engine)
+        logging.info("Creación de la vista con éxito.")
+
+        # Paso final: Verifica y crea la vista si es necesario
+        check_and_create_view(engine)
+        logging.info("Proceso ETL completado con éxito.")
 
     except Exception as e:
         logging.error(f"Error en el proceso ETL: {e}")

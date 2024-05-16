@@ -1,6 +1,6 @@
 import pandas as pd
 import logging
-from sqlalchemy import create_engine, types
+from sqlalchemy import types
 
 # Configurando el logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -101,3 +101,5 @@ def save_transformed_data(engine, companies_df, charges_df):
         except Exception as e:
             logging.info(f"La clave foránea ya existe o hubo un error al crearla: {e}")
         logging.info("Datos guardados en las tablas 'companies' y 'charges'.")
+
+

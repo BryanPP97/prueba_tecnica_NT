@@ -1,6 +1,8 @@
 import pandas as pd
-from sqlalchemy import create_engine
 import logging
+
+# Configurando el logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def load_data(engine):
     """

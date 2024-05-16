@@ -8,7 +8,6 @@ def extract_data(engine):
     """
     Extrae datos de la base de datos y los guarda en un archivo Parquet.
     
-    Python y Pandas son elegidos por su fuerte soporte para el análisis de datos y la manipulación de DataFrames.
     El formato Parquet es seleccionado debido a su eficiencia en espacio y tiempo de lectura, ideal para grandes volúmenes de datos.
     
     Retorna:
